@@ -1,7 +1,7 @@
-function ContactPage
-() {
-    return (  );
-}
+// function ContactPage
+// () {
+//     return (  );
+// }
 
-export default ContactPage
-;
+// export default ContactPage
+// ;
