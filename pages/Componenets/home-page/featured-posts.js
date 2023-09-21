@@ -3,9 +3,9 @@ import classes from './featured-posts.module.css';
 
 function FeaturedPosts(prop) {
     return ( 
-        <section className={className.latest}> 
+        <section className={classes.latest}> 
         <h2>Featured Posts</h2> 
-        <PostsGrid posts={propagateServerField.posts}/>
+        <PostsGrid posts={prop.posts}/>
         </section>
      );
 }
