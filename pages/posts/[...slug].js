@@ -1,5 +1,9 @@
-// function PostDerailPage() {
-//     return (  );
-// }
+import PostContent from "./post-detail/post-content";
 
-// export default PostDerailPage;
+function PostDetailPage() {
+    return ( 
+<PostContent />
+     );
+}
+
+export default PostDetailPage;
