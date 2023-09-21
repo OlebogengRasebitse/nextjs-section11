@@ -20,8 +20,9 @@ function PostItem(props) {
             <Link href={`/posts/${slug}`}>
              
                     <div className={classes.image}>
-                        <Image src={imagePath} alt={title} width={300} height={200} />
-                    </div>
+                        <Image src={imagePath} alt={title} width={300} height={200} layout="responsive"/>
+                    </div> 
+                    {/* makes the image resize to fit its container while keeping its shape. */}
                     <div className={classes.content}>
                         <h3>{title}</h3>
                         <time>{formattedDate}</time>

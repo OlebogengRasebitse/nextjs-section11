@@ -1,5 +1,7 @@
-// function AllPostsPage() {
-//     return (  );
-// }
+function AllPostsPage() {
+    return ( 
+        
+     );
+}
 
-// export default AllPostsPage;
+export default AllPostsPage;
