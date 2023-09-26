@@ -1,42 +1,34 @@
-import { Fragment } from "react";
-import Hero from "./Componenets/home-page/hero";
-import FeaturedPosts from "./Componenets/home-page/featured-posts";
+import { Fragment } from 'react';
+import Head from 'next/head';
+import FeaturedPosts from './Componenets/home-page/featured-posts';
+import Hero from './Componenets/home-page/hero'
+import { getFeaturedPosts } from '../lib/posts-util';
 
-const DUMMY_POSTS = [
-    {  slug: 'getting-started-with-nextjs',
-         title: 'Getting-Started-With-NextJS', 
-    image: 'getting-started-with-nextjs', 
-    excerpt: 'NextJS is the React framework for production, it makes building fullstack React apps and sites a breeze and ships with built-in server-side rendering.',
-     date: '2022-02-10', 
-    },
-    {  slug: 'getting-started-with-nextjs2',
-    title: 'Getting-Started-With-NextJS', 
-image: 'getting-started-with-nextjs', 
-excerpt: 'NextJS is the React framework for production, it makes building fullstack React apps and sites a breeze and ships with built-in server-side rendering.',
-date: '2022-02-10', 
-},
-{  slug: 'getting-started-with-nextjs3',
-title: 'Getting-Started-With-NextJS', 
-image: 'getting-started-with-nextjs', 
-excerpt: 'NextJS is the React framework for production, it makes building fullstack React apps and sites a breeze and ships with built-in server-side rendering.',
-date: '2022-02-10', 
-},
-{  slug: 'getting-started-with-nextjs4',
-title: 'Getting-Started-With-NextJS', 
-image: 'getting-started-with-nextjs', 
-excerpt: 'NextJS is the React framework for production, it makes building fullstack React apps and sites a breeze and ships with built-in server-side rendering.',
-date: '2022-02-10', 
-},
-];
-
-
-function HomePage() {
-    return ( 
-        <Fragment> 
-            <Hero />
-            <FeaturedPosts posts={DUMMY_POSTS} />
-        </Fragment>
-     );
+function HomePage(props) {
+  return (
+    <Fragment>
+      <Head>
+        <title>Max' Blog</title>
+        <meta
+          name='description'
+          content='I post about programming and web development.'
+        />
+      </Head>
+      <Hero />
+      <FeaturedPosts posts={props.posts} />
+    </Fragment>
+  );
 }
+
+export function getStaticProps() { //getStaticProps() is a special function in Next.js used to fetch data before rendering a page
+  const featuredPosts = getFeaturedPosts();
+
+  return {
+    props: {
+      posts: featuredPosts, // We're passing the list of featured posts to our component
+    }
+    }
+  };
+
 
 export default HomePage;
