@@ -1,5 +1,5 @@
 import { getAllPosts } from "../../lib/posts-util";
-import AllPosts from "../Componenets/posts/all-posts";
+import AllPosts from '../../Componenets/posts/all-posts';
 
 
 

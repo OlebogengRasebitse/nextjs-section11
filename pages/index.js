@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import FeaturedPosts from './Componenets/home-page/featured-posts';
-import Hero from './Componenets/home-page/hero'
+import FeaturedPosts from '../Componenets/home-page/featured-posts';
+import Hero from '../Componenets/home-page/hero'
 import { getFeaturedPosts } from '../lib/posts-util';
 
 function HomePage(props) {
