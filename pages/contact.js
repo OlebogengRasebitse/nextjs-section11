@@ -1,7 +1,11 @@
-// function ContactPage
-// () {
-//     return (  );
-// }
+import ContactForm from "../Componenets/contact/contact-form";
 
-// export default ContactPage
-// ;
+function ContactPage
+() {
+    return ( 
+<ContactForm />
+     );
+}
+
+export default ContactPage
+;
