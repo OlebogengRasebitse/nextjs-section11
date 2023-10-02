@@ -8,7 +8,7 @@ function ContactPage
         <Fragment>
             <Head>
                 <title>Contact Me</title>
-                <meta name="description" content="Send me yout messages!" />
+                <meta name="description" content="Send me your messages!" />
             </Head>
             <ContactForm />
         </Fragment>

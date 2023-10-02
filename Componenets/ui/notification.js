@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom';
-
 import classes from './notification.module.css';
 
 function Notification(props) {
@@ -17,12 +16,23 @@ function Notification(props) {
 
   const cssClasses = `${classes.notification} ${statusClasses}`;
 
-  return (
-    <div className={cssClasses}>
-      <h2>{title}</h2>
-      <p>{message}</p>
-    </div>
-  );
+  // Ensure that the target container element exists
+  const targetContainer = document.getElementById('notifications');
+
+  // Check if the target container element exists before creating the portal
+  if (targetContainer) {
+    return ReactDOM.createPortal(
+      <div className={cssClasses}>
+        <h2>{title}</h2>
+        <p>{message}</p>
+      </div>,
+      targetContainer
+    );
+  } else {
+    // Handle the case where the target container element is not found
+    console.error("Target container 'notifications' not found in the DOM.");
+    return null; // or return a fallback UI
+  }
 }
 
 export default Notification;
