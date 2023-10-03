@@ -1,7 +1,14 @@
 import ReactMarkdown from 'react-markdown';
-import Image from 'next/image';
+import Image from 'next/image'; //providing features like lazy loading, automatic optimization, and responsive image support.
 import PostHeader from './post-header';
 import classes from './post-content.module.css';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+
+SyntaxHighlighter.registerLanguage('js', js);
+SyntaxHighlighter.registerLanguage('css', css);
 
 function PostContent(props) {
   const { post } = props;

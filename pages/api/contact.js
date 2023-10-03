@@ -1,7 +1,7 @@
-import { MongoClient } from "mongodb";
+import { MongoClient } from "mongodb"; //allows you to create a connection to a MongoDB database
 
 async function handler(req, res) {
-    if (req.method === "POST") {
+    if (req.method === "POST") { //POST:used when a client wants to send data to the server to be processed or stored. 
         const { email, name, message } = req.body;
 
         if (
@@ -18,10 +18,10 @@ async function handler(req, res) {
 
         let client;
 
+        const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.gylqhwo.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
+
         try {
-            client = await MongoClient.connect(
-                "mongodb+srv://OlebogengRasebitse:VzZZnul43sVBFi5W@cluster0.gylqhwo.mongodb.net/my-site?retryWrites=true&w=majority"
-            );
+            client = await MongoClient.connect(connectionString);
 
             const db = client.db();
             let newMessage;
