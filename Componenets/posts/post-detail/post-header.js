@@ -2,10 +2,11 @@ import Image from 'next/image';
 import classes from "./post-header.module.css";
 
 function PostHeader(props) {
+    const { title, image } = props;
     return ( 
-        <header classname={classes.header}> 
+        <header className={classes.header}> 
             <h1>{props.title}</h1>
-            <Image src={Image} alt={props.title} height={150} width={200}/>
+            <Image src={image} alt={title} height={150} width={200}/>
         </header>
      );
 }
